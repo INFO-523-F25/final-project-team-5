@@ -7,7 +7,7 @@ jupyter: python3
 
 This project was developed by **[Team Name]** For [INFO 523 - Data Mining and Discovery](https://datamineaz.org/) at the University of Arizona, taught by Dr. Greg Chism. The team is comprised of the following team members.
 
--   Team member 1: One sentence description of Team member 1 (e.g., year, major, etc.).
+-   Team member 1: Nicholas Tyler is a first-year MSDS student at the Univeristy of Arizona.
 
 -   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
 
