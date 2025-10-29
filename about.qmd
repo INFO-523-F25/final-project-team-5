@@ -9,8 +9,8 @@ This project was developed by **[Team Name]** For [INFO 523 - Data Mining and Di
 
 -   Team member 1: Nicholas Tyler is a first-year MSDS student at the Univeristy of Arizona.
 
--   Team member 2: One sentence description of Team member 2 (e.g., year, major, etc.).
+-   Team member 2: John Moran is a second-year MSDS student at the University of Arizona.
 
 -   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
 
--   Team member 4: One sentence description of Team member 4 (e.g., year, major, etc.).
+
