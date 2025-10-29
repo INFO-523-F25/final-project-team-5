@@ -70,6 +70,7 @@ a clean, complete set of data, so we knew that this was a trustworthy dataset th
 The two questions you want to answer.
 
 1. How do economic factors (i.e. unemployment rates, U.S. Treasurey 3-Month Bond Yield, etc.) impact volatility within the financial markets?
+2. What insights can historical stock market data offer to forecast future price movements and assess market volatility?
 
 ## Analysis plan
 
@@ -78,3 +79,17 @@ The two questions you want to answer.
 1. For this question, we plan to analyze the impact on volatility rates with features related to the economy, inlcuding Unemployment Rate, 
 U.S. Treasure 3-Month Bond Yield rate, Economic Policy Uncertainty Index, and Geopolitical Risk Index in order to determine how these economic factors impact
 the financial markets.
+2. For this question we plan to analyze long-term trends focusing on monthly and yearly patterns using the date variable. By examining aggregated data across these longer intervals, we can identify consistent patterns that can show us how long-term market movements influence future price forecasts and volatility levels.
+
+## Weekly plan
+
+11/3 - Data retrieval and EDA
+11/10 - Pre-Processing
+11/17 - Model Implementation
+11/24 - Finalize Model Implementation
+12/1 - Model Evaluation
+12/8 - Result Interpretation
+12/15 - Finalize report/presentation and submit
+
+
+
