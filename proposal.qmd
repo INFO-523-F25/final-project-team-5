@@ -35,34 +35,27 @@ stocks = pd.read_csv('data/stock_data.csv')
 
 stocks.head()
 ```
-
-A brief description of your dataset including its provenance, dimensions, etc. as well as the reason why you chose this dataset.
-
-Make sure to load the data and use inline code for some of this information.
-
-
 The Daily Stocks Data dataset (stocks_data.csv) is a dataset from Kaggle which captures data on financial market performance from 1990 to 2024. This data has relevant 
 information related to volume, macroeconomic indicators, volatility index, and uncertainty metrics. This dataset is compiled from a variety of historical records, 
 including the Chicago Board Option Exchange, Yahoo Finance and historical finance datasets, Buerau of Economic Anaysis, Federal Reserve, Economic Policy Uncertainty Index, 
 and the Global Policy Uncertainty Database.
 
-The dataset has the following dimensions:
-  1. dt: Observation Date
-  2. vix: Volatility Index (VIX)
-  3. sp500: S&P 500 Index Value
-  4. sp500_volume: Daily trading volume for the S&P 500.
-  5. djia: Dow Jones Industrial Average (DJIA)
-  6. djia_volume: Daily trading volume for the DJIA.
-  7. hsi: Hang Seng Index
-  8. ads: Aruoba-Diebold-Scotti (ADS) Business Conditions Index
-  9. us3m: U.S. Treasury 3-month bond yield
-  10. joblessness: U.S. unemployment rate, reported as quartiles.
-  11. epu: Economic Policy Uncertainty Index
-  12. GPRD: Geopolitical Risk Index (Daily)
-  13. prev_day: Previous day’s S&P 500 closing value
+The dataset has the following dimensions:\
+  1. dt: Observation Date\
+  2. vix: Volatility Index (VIX)\
+  3. sp500: S&P 500 Index Value\
+  4. sp500_volume: Daily trading volume for the S&P 500.\
+  5. djia: Dow Jones Industrial Average (DJIA)\
+  6. djia_volume: Daily trading volume for the DJIA.\
+  7. hsi: Hang Seng Index\
+  8. ads: Aruoba-Diebold-Scotti (ADS) Business Conditions Index\
+  9. us3m: U.S. Treasury 3-month bond yield\
+  10. joblessness: U.S. unemployment rate, reported as quartiles.\
+  11. epu: Economic Policy Uncertainty Index\
+  12. GPRD: Geopolitical Risk Index (Daily)\
+  13. prev_day: Previous day’s S&P 500 closing value\
 
-We ultimately chose this dataset as a team because we wanted to analyze the stock market. Furthermore, this particular dataset had very reliable sources along with being
-a clean, complete set of data, so we knew that this was a trustworthy dataset that would be ready for analysis.
+We ultimately chose this dataset as a team because we wanted to analyze the stock market. Furthermore, this particular dataset had very reliable sources along with being a clean, complete set of data, so we knew that this was a trustworthy dataset that would be ready for analysis.
 
 
 ## Questions
