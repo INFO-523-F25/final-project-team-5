@@ -5,15 +5,16 @@
 Final project repo for INFO 523 - Summer 2025.
 
 ## Overview
-
+**TODO**
 ## Project Structure
-
+**TODO**
 ## Branching Conventions
-
+Developers should create feature branches following the format `dev_[lastName]_[issue#]`.
+Once development and testing are complete, submit a pull request into main for peer review. Team members will review the changes, offer feedback, and approve the merge once all comments are resolved.
 ## Build Instructions
-
+**TODO**
 ## Dependencies
-
+**TODO**
 ## Authors
 - Nicholas Tyler
 - John Moran
