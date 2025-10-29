@@ -83,13 +83,13 @@ the financial markets.
 
 ## Weekly plan
 
-11/3 - Data retrieval and EDA
-11/10 - Pre-Processing
-11/17 - Model Implementation
-11/24 - Finalize Model Implementation
-12/1 - Model Evaluation
-12/8 - Result Interpretation
-12/15 - Finalize report/presentation and submit
+* Week of 11/3 - Data retrieval and EDA
+* Week of 11/10 - Pre-Processing
+* Week of 11/17 - Model Implementation
+* Week of 11/24 - Finalize Model Implementation
+* Week of 12/1 - Model Evaluation
+* Week of 12/8 - Result Interpretation
+* Week of 12/15 - Finalize report/presentation and submit
 
 
 
