@@ -2,10 +2,10 @@
 title: "Project Title"
 subtitle: "INFO 523 - Final Project"
 author: 
-  - name: "Team name - Team member 1, Team member 2,..."
+  - name: "Team 5 - Nicholas Tyler, John Moran, Zuleima Cota"
     affiliations:
       - name: "College of Information Science, University of Arizona"
-description: "Project description"
+description: "Exploration of the relationship between key economic indicators and financial market behavior."
 format:
    html:
     code-tools: true
@@ -19,5 +19,9 @@ jupyter: python3
 ---
 
 ## Abstract
+Our analysis focuses on two primary research questions:
+1. **How do economic factors — such as unemployment rates and the U.S. Treasury 3-Month Bond Yield — influence volatility within financial markets?**
+2. **What insights can historical stock market data provide to help forecast future price movements and assess market volatility?**
 
-Add project abstract here.
+Through data exploration, data visualization, and machine learning, we aim to identify patterns and relationships to enhance our understanding of market dynamics and predictive trends. For this analysis we will be utilizing the '34-year Daily Stock Data (1990-2024)' dataset.
+
