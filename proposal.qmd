@@ -41,7 +41,7 @@ stocks = pd.read_csv('data/stock_data.csv')
 
 stocks.info()
 
-unemployment = pd.read_csv('data/SeriesReport.csv)
+unemployment = pd.read_csv('data/SeriesReport.csv')
 
 unemployment.head()
 ```
