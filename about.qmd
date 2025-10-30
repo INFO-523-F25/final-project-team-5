@@ -11,6 +11,5 @@ This project was developed by **Team 5** For [INFO 523 - Data Mining and Discove
 
 -   Team member 2: John Moran is a second-year MSDS student at the University of Arizona.
 
--   Team member 3: One sentence description of Team member 3 (e.g., year, major, etc.).
-
+-   Team member 3: Zuleima Cota is a non-degrees seeking graduate student at the University of Arizona.
 
