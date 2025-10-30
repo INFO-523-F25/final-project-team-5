@@ -1,5 +1,5 @@
 ---
-title: "Project Title"
+title: "Financial Market Performance Forecasting"
 subtitle: "INFO 523 - Final Project"
 author: 
   - name: "Team 5 - Nicholas Tyler, John Moran, Zuleima Cota"

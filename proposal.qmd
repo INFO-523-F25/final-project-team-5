@@ -1,5 +1,5 @@
 ---
-title: "Proposal title"
+title: "Financial Market Performance Forecasting"
 subtitle: "Proposal"
 author: 
   - name: "Team Name - Nicholas Tyler, John Moran, Zuleima Cota"
@@ -22,23 +22,37 @@ jupyter: python3
 ```{python}
 #| label: load-pkgs
 #| message: false
+#| warning: false
+#| echo: false
 import numpy as np
 import pandas as pd 
 ```
+## Goal 
+Our goal for this project is to assess the financial markets and investigate the impacts that various economic conditions have on their performance. Furthermore, we would like to attempt to predict market volatility and future price movements within the financial markets given various economic conditions.
 
 ## Dataset
 
 ```{python}
 #| label: load-dataset
 #| message: false
+#| warning: false
+#| echo: false
 stocks = pd.read_csv('data/stock_data.csv')
 
-stocks.head()
+stocks.info()
+
+unemployment = pd.read_csv('data/SeriesReport.csv)
+
+unemployment.head()
 ```
+
 The Daily Stocks Data dataset (stocks_data.csv) is a dataset from Kaggle which captures data on financial market performance from 1990 to 2024. This data has relevant 
 information related to volume, macroeconomic indicators, volatility index, and uncertainty metrics. This dataset is compiled from a variety of historical records, 
 including the Chicago Board Option Exchange, Yahoo Finance and historical finance datasets, Buerau of Economic Anaysis, Federal Reserve, Economic Policy Uncertainty Index, 
 and the Global Policy Uncertainty Database.
+
+We ultimately chose this dataset because we wanted to analyze the stock market. Furthermore, this particular dataset had very reliable sources, was in a clean format, and had all the necessary information
+that we were looking for, so we knew that this was a trustworthy dataset that would set us up well for our analysis.
 
 The dataset has the following dimensions:\
   1. dt: Observation Date\
@@ -55,34 +69,48 @@ The dataset has the following dimensions:\
   12. GPRD: Geopolitical Risk Index (Daily)\
   13. prev_day: Previous day’s S&P 500 closing value\
 
-We ultimately chose this dataset as a team because we wanted to analyze the stock market. Furthermore, this particular dataset had very reliable sources along with being a clean, complete set of data, so we knew that this was a trustworthy dataset that would be ready for analysis.
-
+The Unemployment dataset (SeriesReport.csv) is a dataset that comes from the Bureau of Labor Statistics that provides the unemployment rate per month for the United States from 1990 - 2024. Since the only
+unemployment information we had from the Daily Stocks Dataset was the quartile that that particular date fell into, we felt that it was necessary to get a more true representation of what the actual unemployment
+situation was during the time that the stock market results occurred. While a simple dataset, this was a dataset from a reliable source which provided the additional information we needed for our analysis.
 
 ## Questions
 
-The two questions you want to answer.
-
-1. How do economic factors (i.e. unemployment rates, U.S. Treasurey 3-Month Bond Yield, etc.) impact volatility within the financial markets?
+1. Can we predict volatility within the financial markets based on various economic factors (i.e. unemployment rates, U.S. Treasurey 3-Month Bond Yield, etc.)?
 2. What insights can historical stock market data offer to forecast future price movements and assess market volatility?
 
 ## Analysis plan
 
--   A plan for answering each of the questions including the variables involved, variables to be created (if any), external data to be merged in (if any).
+1. For predicting volatility within the financial markets, we plan to analyze and predict how volatility rates are impacted by various economic variables. The economic variables that we will track inlcude 
+Unemployment Rate (externally sourced from the Unemployment dataset), U.S. Treasure 3-Month Bond Yield rate, Economic Policy Uncertainty Index, and Geopolitical Risk Index in order to determine how these 
+economic factors impact the financial markets. By using the best machine learning model for this dataset, we hope to accurately predict how volatility rates will be impacted as we see various economic 
+factors fluctuate.
 
-1. For this question, we plan to analyze the impact on volatility rates with features related to the economy, inlcuding Unemployment Rate, 
-U.S. Treasure 3-Month Bond Yield rate, Economic Policy Uncertainty Index, and Geopolitical Risk Index in order to determine how these economic factors impact
-the financial markets.
-2. For this question we plan to analyze long-term trends focusing on monthly and yearly patterns using the date variable. By examining aggregated data across these longer intervals, we can identify consistent patterns that can show us how long-term market movements influence future price forecasts and volatility levels.
+2. For forecasting future price movements, we plan to analyze long-term trends focusing on monthly and yearly patterns using the date variable. By examining aggregated data across these longer intervals, we can identify consistent patterns that can show us how long-term market movements influence future price forecasts and volatility levels.
 
 ## Weekly plan
 
 * Week of 11/3 - Data retrieval and EDA
+  - For this week, we will load in the datasets and begin to explore and analyze our various datasets. Some of the tasks that we will perform this week include running descriptive statistics on variables, 
+  exploring distributions of variables, checking for normality, analyzing correlations between variables, and so on.
+  - Nicholas will be responsible for performing these tasks, while John and Zuleima will be responsible for reviewing this code and information following completion of the EDA.
 * Week of 11/10 - Pre-Processing
+  - For this week, we will perform pre-processing steps, including handling missing values, standardizing variables, handling skew, dealing with highly correlated variables, performing PCA, and so on.
+  - John will be responsible for handling missing values and standardizing variables, Zuleima will be responsible for handling skew within the data and dealing with highly correlated variables, and 
+  Nicholas will be responsible for performing PCA. 
 * Week of 11/17 - Model Implementation
+  - For this week, we will begin training our models and searching for the best fitting model.
+  - Nicholas and John will be responsible for training the model for question #1 (predicing volatility within the financial markets), whereas Zuleima will be responsible for training the model for question #2
+  (predicting future price movements and assessing market volatility).
 * Week of 11/24 - Finalize Model Implementation
+  - This week, we will finalize our model implementation.
+  - John and Zuleima will be responsible for finalizing model implementation on question #1, whereas Nicholas will be responsible for finalizing model implementation on question #2.
 * Week of 12/1 - Model Evaluation
+  - This week, we will evaluate our models and assess model performance.
+  - Nicholas and Zuleima will evaluate the model for question #1, whereas John will evaluate the model for question #2. 
 * Week of 12/8 - Result Interpretation
+  - This week, we will interpret the results from our models.
+  - Zuleima will be responsible for interpreting the model for question #1, whereas Nichola and John will be responsible for interpreting the model for question #2.
+  - Halfway through the week, we will switch to ensure that everyone on our team gets the opportunity to interpret the results from each model.
+  - While evaluating and interpreting the results from our models, we will each work on compiling our analysis within the report to ensure that everyone contributes their feedback on each of the models.
 * Week of 12/15 - Finalize report/presentation and submit
-
-
-
+  - This week, we will finalize our report and presentation.

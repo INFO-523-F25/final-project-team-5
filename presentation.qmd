@@ -1,5 +1,5 @@
 ---
-title: "Project title"
+title: "Financial Market Performance Forecasting"
 subtitle: "INFO 523 - Summer 2025 - Final Project"
 author: "Author names"
 title-slide-attributes:
