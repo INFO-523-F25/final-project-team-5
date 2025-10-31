@@ -5,7 +5,7 @@ author:
   - name: "Team Name - Nicholas Tyler, John Moran, Zuleima Cota"
     affiliations:
       - name: "College of Information Science, University of Arizona"
-description: "Project description"
+description: "Analyzing stock market trends to identify future price movements and assess market volatility."
 format:
   html:
     code-tools: true
@@ -109,7 +109,7 @@ factors fluctuate.
   - Nicholas and Zuleima will evaluate the model for question #1, whereas John will evaluate the model for question #2. 
 * Week of 12/8 - Result Interpretation
   - This week, we will interpret the results from our models.
-  - Zuleima will be responsible for interpreting the model for question #1, whereas Nichola and John will be responsible for interpreting the model for question #2.
+  - Zuleima will be responsible for interpreting the model for question #1, whereas Nicholas and John will be responsible for interpreting the model for question #2.
   - Halfway through the week, we will switch to ensure that everyone on our team gets the opportunity to interpret the results from each model.
   - While evaluating and interpreting the results from our models, we will each work on compiling our analysis within the report to ensure that everyone contributes their feedback on each of the models.
 * Week of 12/15 - Finalize report/presentation and submit
