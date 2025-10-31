@@ -28,7 +28,7 @@ import numpy as np
 import pandas as pd 
 ```
 ## Goal 
-Our goal for this project is to assess the financial markets and investigate the impacts that various economic conditions have on their performance. Furthermore, we would like to attempt to predict market volatility and future price movements within the financial markets given various economic conditions.
+Our goal for this project is to assess the financial markets and investigate the impacts that various economic conditions have on their performance. Furthermore, we would like to attempt to predict market volatility and future price movements within the financial markets given aspects like unemployment rates. The insights gained from our analysis may aid investors and those looking to better understand stock market performance what factors drive market stability and fluctuation to devise informed investment plans. 
 
 ## Dataset
 
@@ -85,7 +85,7 @@ Unemployment Rate (externally sourced from the Unemployment dataset), U.S. Treas
 economic factors impact the financial markets. By using the best machine learning model for this dataset, we hope to accurately predict how volatility rates will be impacted as we see various economic 
 factors fluctuate.
 
-2. For forecasting future price movements, we plan to analyze long-term trends focusing on monthly and yearly patterns using the date variable. By examining aggregated data across these longer intervals, we can identify consistent patterns that can show us how long-term market movements influence future price forecasts and volatility levels.
+2. For forecasting future price movements, we plan to analyze long-term trends focusing on monthly and yearly patterns using the date variable. By examining aggregated data across these longer intervals, we can identify consistent patterns that can show us how long-term market movements influence future price forecasts and volatility levels. We will accomplish this through time-series analysis of historical stock market data using the ARIMA and run evaluation on the model.
 
 ## Weekly plan
 
