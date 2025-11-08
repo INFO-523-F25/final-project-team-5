@@ -2,3 +2,6 @@ jupyter
 nbformat
 pandas
 numpy
+matplotlib
+seaborn
+statsmodels
