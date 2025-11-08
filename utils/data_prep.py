@@ -34,6 +34,15 @@ unemployment_unpivot['Month'] = unemployment_unpivot['Month'].map(month_replacem
 # Merging the two DataFrames Together
 stock_data_final = pd.merge(stock_data, unemployment_unpivot, on = ['Year', 'Month'], how = 'left')
 
+# Returning the First Five Records
+stock_data_final.head()
+
+# Returning Column Information on the DataFrame
+stock_data_final.info()
+
+# Returning Descriptive Statistics on the Data
+stock_data_final.describe()
+
 # Creating the Boxplots
 
 # Creating a Figure to Hold all Boxplot Subplots
