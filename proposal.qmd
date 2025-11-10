@@ -82,11 +82,11 @@ situation was during the time that the stock market results occurred. While a si
 
 1. For predicting the Volatility Index, we plan to analyze and predict how volatility rates are impacted by various economic variables. The variables that we will use in our models inlcude Unemployment Rate, 
 U.S. Treasury 3-Month Bond Yield Rate, Economic Policy Uncertainty Index, and Geopolitical Risk Index in order to determine how these economic factors impact the financial markets. We chose to use these variables
-for hte following reasons:
+for the following reasons:
 
 - Unemployment Rate: We chose to include this variable because we wanted to analyze how joblessness impacted the uncertainty of the financial markets. Furthermore, when more people are without a job,
 we anticipate this to cause concern among investors, potentially raising the Volatility Index.\
-- U.S. Treasury 3-Month Bond Yield Rate: We chose to include the U.s. Treasury 3-Month Bond Yield Rate because we wanted to analyze how rates surrounding these short-term government-owned bonds impacted the
+- U.S. Treasury 3-Month Bond Yield Rate: We chose to include the U.S. Treasury 3-Month Bond Yield Rate because we wanted to analyze how rates surrounding these short-term government-owned bonds impacted the
 Volatility Index.\
 - Economic Policy Uncertainty Index: We wanted to investigate how uncertainty related to economic policies impacted the performance within the financial markets. As the levels of economic uncertainty related 
 to policies rise, we expect this to positively correlate with the Volatility Index, as if people are uncertain about how policies will impact the economy, this will likely raise concern with investors and raise
