@@ -69,23 +69,37 @@ The dataset has the following dimensions:\
   12. GPRD: Geopolitical Risk Index (Daily)\
   13. prev_day: Previous day’s S&P 500 closing value\
 
-The Unemployment dataset (SeriesReport.csv) is a dataset that comes from the Bureau of Labor Statistics that provides the unemployment rate per month for the United States from 1990 - 2024. Since the only
+The unemployment dataset (SeriesReport.csv) is a dataset that comes from the Bureau of Labor Statistics that provides the unemployment rate per month for the United States from 1990 - 2024. Since the only
 unemployment information we had from the Daily Stocks Dataset was the quartile that that particular date fell into, we felt that it was necessary to get a more true representation of what the actual unemployment
 situation was during the time that the stock market results occurred. While a simple dataset, this was a dataset from a reliable source which provided the additional information we needed for our analysis.
 
 ## Questions
 
-1. Can we predict volatility within the financial markets based on various economic factors (i.e. unemployment rates, U.S. Treasurey 3-Month Bond Yield, etc.)?
+1. Can we predict the Volatility Index within the financial markets based on various economic factors (i.e. unemployment rates, U.S. Treasurey 3-Month Bond Yield, etc.)?
 2. What insights can historical stock market data offer to forecast future price movements and assess market volatility?
 
 ## Analysis plan
 
-1. For predicting volatility within the financial markets, we plan to analyze and predict how volatility rates are impacted by various economic variables. The economic variables that we will track inlcude 
-Unemployment Rate (externally sourced from the Unemployment dataset), U.S. Treasure 3-Month Bond Yield rate, Economic Policy Uncertainty Index, and Geopolitical Risk Index in order to determine how these 
-economic factors impact the financial markets. By using the best machine learning model for this dataset, we hope to accurately predict how volatility rates will be impacted as we see various economic 
-factors fluctuate.
+1. For predicting the Volatility Index, we plan to analyze and predict how volatility rates are impacted by various economic variables. The variables that we will use in our models inlcude Unemployment Rate, 
+U.S. Treasury 3-Month Bond Yield Rate, Economic Policy Uncertainty Index, and Geopolitical Risk Index in order to determine how these economic factors impact the financial markets. We chose to use these variables
+for hte following reasons:
 
-2. For forecasting future price movements, we plan to analyze long-term trends focusing on monthly and yearly patterns using the date variable. By examining aggregated data across these longer intervals, we can identify consistent patterns that can show us how long-term market movements influence future price forecasts and volatility levels. We will accomplish this through time-series analysis of historical stock market data using the ARIMA and run evaluation on the model.
+- Unemployment Rate: We chose to include this variable because we wanted to analyze how joblessness impacted the uncertainty of the financial markets. Furthermore, when more people are without a job,
+we anticipate this to cause concern among investors, potentially raising the Volatility Index.\
+- U.S. Treasury 3-Month Bond Yield Rate: We chose to include the U.s. Treasury 3-Month Bond Yield Rate because we wanted to analyze how rates surrounding these short-term government-owned bonds impacted the
+Volatility Index.\
+- Economic Policy Uncertainty Index: We wanted to investigate how uncertainty related to economic policies impacted the performance within the financial markets. As the levels of economic uncertainty related 
+to policies rise, we expect this to positively correlate with the Volatility Index, as if people are uncertain about how policies will impact the economy, this will likely raise concern with investors and raise
+the Volatility Index.\
+- Geopolitical Risk Index: As with the Economic Policy Uncertainty Index, we wanted to investigate how uncertainty related to geopolitical events impact the financial markets. Furthermore, we also expect
+the Volatility Index to rise as the Geopolitical Risk Index rises, as we expect uncertainty around geopolitical events to cause uncertainty within the financial markets.
+
+By using the best machine learning model for this dataset, we hope to accurately predict how volatility rates will be impacted as we see various economic factors fluctuate. During the model implementation phase, 
+we will compare model performance on a ridge regression, lasso regression, random forest, and gradient boosting models. To evaluate our models models, we will use ajusted R-squared and mean standard error.
+
+2. For forecasting future price movements, we plan to analyze long-term trends focusing on monthly and yearly patterns using the date variable. By examining aggregated data across these longer intervals, 
+we can identify consistent patterns that can show us how long-term market movements influence future price forecasts and volatility levels. We will accomplish this through time-series analysis of historical 
+stock market data using the ARIMA and run evaluation on the model. To evaluate our model, we will use AIC and root mean standard error.
 
 ## Weekly plan
 
