@@ -20,6 +20,9 @@ def gradient_boost(df, y, n_estimators, random_state):
     # Initializing a variable for the gradient boost model
     gradient_boost = GradientBoostingRegressor(n_estimators = n_estimators, random_state = random_state)
 
+    # Fitting the Gradient Boost Regression
+    gradient_boost.fit(X_train, y_train)
+    
     # Predicting the Model on the Testing Set
     y_pred_gradient_boost = gradient_boost.predict(X_test)
 
