@@ -1,8 +1,10 @@
-import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import seaborn as sns
 import statsmodels.api as sm
+
+'''
+This module contains functions to create various EDA visualizations such as boxplots, KDE plots, pairplots, and Q-Q plots.
+'''
 
 def boxplot_visuals(df, columns_to_plot, column_name_mapping, title):
     # Creating the Figure for the Boxplot Subplots
