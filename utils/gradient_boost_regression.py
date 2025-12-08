@@ -1,4 +1,4 @@
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
@@ -31,6 +31,48 @@ def gradient_boost(df, y, n_estimators, random_state):
 
     # Calcuating the R-Squared Value
     r2_lasso = r2_score(y_test, y_pred_gradient_boost)
+
+    # Initializing a Variable for the MSE and R-Squared Results
+    results = f'Mean Squared Error: {mse_lasso}\nR-Squared: {r2_lasso}'
+    
+    # Returning the Results
+    return results
+
+def gradient_boost_hyperparameter_tuning(df, y, param_grid, cv, random_state):
+    # Initializing a variable for the predictor variables
+    X = df.drop(y, axis = 1)
+
+    # Initializing a variable for the response variable
+    y = df[y]
+
+    # Splitting the data into training and testing datasets
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 42)
+
+    # Initializing a variable for the gradient boost model
+    gradient_boost = GradientBoostingRegressor(random_state = random_state)
+
+    # Initializing a Variable for Grid Search
+    grid_search = GridSearchCV(gradient_boost,
+                               param_grid = param_grid,
+                               cv = cv,
+                               scoring = 'neg_mean_squared_error',
+                               n_jobs = 1)
+    
+    # Fitting the Model
+    grid_search.fit(X_train, y_train)
+    
+    # Re-Initializing and Fitting the Model with the new Parameters
+    gradient_boost_best = gradient_boost.set_params(**grid_search.best_params_)
+    gradient_boost_best.fit(X_train, y_train)
+
+    # Making New Predictions on the Test Dataset
+    y_pred_best = gradient_boost_best.predict(X_test)
+
+    # Calculating the Mean Squared Error
+    mse_lasso = mean_squared_error(y_test, y_pred_best)
+
+    # Calcuating the R-Squared Value
+    r2_lasso = r2_score(y_test, y_pred_best)
 
     # Initializing a Variable for the MSE and R-Squared Results
     results = f'Mean Squared Error: {mse_lasso}\nR-Squared: {r2_lasso}'
