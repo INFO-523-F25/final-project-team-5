@@ -19,6 +19,21 @@ column_name_mapping = {
 }
 
 def log_transform(df, columns):
+    '''
+    Contains utility functions for performing a log transformation on the relevant numeric columns.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that the log transformation will be applied to.
+    columns (list):
+        The list of columns that the log transformation will be applied to.
+
+    Results
+    ------------
+    df (pd.DataFrame):
+        The DataFrame with the log-transformed results.
+    '''
     try:
         # Creating the figure for all subplots
         fig, axes = plt.subplots(nrows=5, ncols=2, figsize=(12, 10))

@@ -1,3 +1,7 @@
+"""
+Contains utility functions for creating, training, and testing
+a Lasso Regression Model.
+"""
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import Lasso
 from sklearn.metrics import mean_squared_error, r2_score
@@ -6,12 +10,29 @@ from sklearn.linear_model import Lasso, LassoCV
 from sklearn.metrics import mean_squared_error, r2_score
 import numpy as np
 
-"""
-Contains utility functions for creating, training, and testing
-a lasso regression model.
-"""
-
 def lasso_regression(df, y, alpha, random_state):
+    '''
+    Initializes a Lasso Regression model, trains the model on 
+    a training dataset, tests the model on a testing dataset,
+    and calculates and returns the Mean Squared Error and R-Squared Values.
+
+    Parameters
+    -------------
+    df (pd.DataFrame):
+        The DataFrame that the mdoel will be trained on. This DataFrame should
+        only contain numeric values.
+    y (pd.Series):
+        The response variable from the DataFrame.
+    alpha (float):
+        The alpha variable for the Lasso Regression Model.
+    random_state (int):
+        The seed set for reproducibility within our model.
+    
+    Returns
+    -------------
+    results (str):
+        The Mean-Squared and R-Squared results of the Lasso Regression Model.
+    '''
     # Initializing a variable for the predictor variables
     X = df.drop(y, axis = 1)
 
@@ -44,7 +65,28 @@ def lasso_regression(df, y, alpha, random_state):
 
 def lasso_hyperparameter_tuning(df, y, cv, max_iter, random_state):
     '''
-    This function performs hyperparameter tuning on the lasso model.
+    This function performs hyperparameter tuning on the lasso model,
+    fits the model with the new parameters, and returns the Mean Squared 
+    Error and R-Squared values.
+
+    Parameters
+    -------------
+    df (pd.DataFrame):
+        The DataFrame that the mdoel will be trained on. This DataFrame should
+        only contain numeric values.
+    y (pd.Series):
+        The response variable from the DataFrame.
+    cv (int):
+        The number of cross-validation folds for the Lasso Regression model.
+    max_iter (int):
+        The max number of iterations.
+    random_state (int):
+        The seed set for reproducibility within our model.
+    
+    Returns
+    -------------
+    results (str):
+        The Mean-Squared and R-Squared results of the Lasso Regression Model.
     '''
     # Initializing a variable for the predictor variables
     X = df.drop(y, axis = 1)
@@ -74,7 +116,7 @@ def lasso_hyperparameter_tuning(df, y, cv, max_iter, random_state):
     # Calculating the Mean Squared Error
     mse_best = mean_squared_error(y_test, y_pred_best_lasso)
 
-    # Calculating the R-Swuared Value
+    # Calculating the R-Squared Value
     r2_best = r2_score(y_test, y_pred_best_lasso)
 
     # Initializing a Variable for the MSE and R-Squared Results

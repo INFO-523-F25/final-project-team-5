@@ -4,10 +4,32 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 """
 Contains utility functions for creating, training, and testing
-a gradient boost regression model.
+a gradient boosting regression model.
 """
 
 def gradient_boost(df, y, n_estimators, random_state):
+    '''
+    Initializes a Gradient Boosting Regression model, trains the model on 
+    a training dataset, tests the model on a testing dataset,
+    and calculates and returns the Mean Squared Error and R-Squared Values.
+
+    Parameters
+    -------------
+    df (pd.DataFrame):
+        The DataFrame that the mdoel will be trained on. This DataFrame should
+        only contain numeric values.
+    y (pd.Series):
+        The response variable from the DataFrame.
+    n_estimators (float):
+        The number of boosting stages to be performed.
+    random_state (int):
+        The seed set for reproducibility within our model.
+    
+    Returns
+    -------------
+    results (str):
+        The Mean-Squared and R-Squared results of the Gradient Boosting Regression Model.
+    '''
     # Initializing a variable for the predictor variables
     X = df.drop(y, axis = 1)
 
@@ -39,6 +61,30 @@ def gradient_boost(df, y, n_estimators, random_state):
     return results
 
 def gradient_boost_hyperparameter_tuning(df, y, param_grid, cv, random_state):
+    '''
+    This function performs hyperparameter tuning on the gradient boosting regression
+    model via Grid Search Cross-Valiation, fits the model with the new parameters, 
+    and returns the Mean Squared Error and R-Squared values.
+
+    Parameters
+    -------------
+    df (pd.DataFrame):
+        The DataFrame that the mdoel will be trained on. This DataFrame should
+        only contain numeric values.
+    y (pd.Series):
+        The response variable from the DataFrame.
+    param_grid (dict):
+        The dictionary that holds the values for Grid Search Cross-Validation.
+    cv (int):
+        The number of cross-validation folds for the Gradient Boosting Regression model.
+    random_state (int):
+        The seed set for reproducibility within our model.
+    
+    Returns
+    -------------
+    results (str):
+        The Mean-Squared and R-Squared results of the Gradient Boosting Regression Model.
+    '''
     # Initializing a variable for the predictor variables
     X = df.drop(y, axis = 1)
 

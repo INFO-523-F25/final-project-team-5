@@ -5,6 +5,18 @@ from sklearn.decomposition import PCA
 def standardize_data(df, y):
     '''
     This function standardizes the numerical features of the dataset.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that the standardization will be applied to.
+    y (pd.Series):
+        The response variable of the model.
+
+    Results
+    ------------
+    df (DataFrame):
+        The DataFrame with the standardized values.
     '''
     # Initializing a List of Numerical Columns
     numeric_columns = df.select_dtypes(include='number').columns
@@ -24,6 +36,20 @@ def standardize_data(df, y):
 def pca_transformation(df, y, n_components=0.95):
     '''
     This function performs PCA on the standardized numerical features of the dataset.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that PCA will be applied to.
+    y (pd.Series):
+        The response variable of the model.
+    n_components (int):
+        The number of PCA Components the data should be split up into.
+
+    Results
+    ------------
+    df (DataFrame):
+        The DataFrame with the PCA-transformed values.
     '''
     # Initializing a List of Numerical Columns
     numeric_columns = df.select_dtypes(include='number').columns
