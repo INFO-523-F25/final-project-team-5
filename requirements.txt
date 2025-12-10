@@ -7,3 +7,5 @@ seaborn
 statsmodels
 tensorflow
 scikit-learn
+prophet
+fbprophet

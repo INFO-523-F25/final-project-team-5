@@ -7,8 +7,27 @@ This module contains functions to create various EDA visualizations such as boxp
 '''
 
 def boxplot_visuals(df, columns_to_plot, column_name_mapping, title):
+    '''
+    Creates boxplot visuals on the relevant numeric columns.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that contain the information that the boxplots will be created from.
+    columns_to_plot (list):
+        The list of columns that will be plotted.
+    column_name_mapping (dict):
+        A dictionary containing descriptive names that will be used for the subplot titles.
+    title (str):
+        A string that will be used for the figure title.
+
+    Results
+    ------------
+    matplotlib.figure.Figure:
+        The figure that contains all the boxplot graphs.
+    '''
     # Creating the Figure for the Boxplot Subplots
-    fig, axes = plt.subplots(nrows = 3, ncols = 2, figsize = (12, 10))
+    fig, axes = plt.subplots(nrows = 5, ncols = 3, figsize = (12, 15))
 
     # Flatten the Axes Array to Iterate over all Subplots
     axes_flat = axes.flatten()
@@ -32,8 +51,8 @@ def boxplot_visuals(df, columns_to_plot, column_name_mapping, title):
     for ax in axes_flat[len(columns_to_plot):]:
         ax.axis('off')
 
-    # Setting the Plot Title
-    fig.suptitle(title)
+    # Setting the Figure Title
+    fig.suptitle(title, y = 1)
 
     # Adding Padding to the Graphs
     fig.tight_layout(pad=1.0)
@@ -42,8 +61,27 @@ def boxplot_visuals(df, columns_to_plot, column_name_mapping, title):
     plt.show()
 
 def kde_visuals(df, columns_to_plot, column_name_mapping, title):
+    '''
+    Creates KDE visuals on the relevant numeric columns.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that contain the information that the KDE plots will be created from.
+    columns_to_plot (list):
+        The list of columns that will be plotted.
+    column_name_mapping (dict):
+        A dictionary containing descriptive names that will be used for the subplot titles.
+    title (str):
+        A string that will be used for the figure title.
+
+    Results
+    ------------
+    matplotlib.figure.Figure:
+        The figure that contains all the KDE graphs.
+    '''
     # Creating the Figure for the Boxplot Subplots
-    fig, axes = plt.subplots(nrows = 3, ncols = 2, figsize = (12, 10))
+    fig, axes = plt.subplots(nrows = 5, ncols = 3, figsize = (12, 15))
 
     # Flatten the Axes Array to Iterate over all Subplots
     axes_flat = axes.flatten()
@@ -67,8 +105,8 @@ def kde_visuals(df, columns_to_plot, column_name_mapping, title):
     for ax in axes_flat[len(columns_to_plot):]:
         ax.axis('off')
 
-    # Setting the Plot Title
-    fig.suptitle(title)
+    # Setting the Figure Title
+    fig.suptitle(title, y = 1)
 
     # Adding Padding to the Graphs
     fig.tight_layout(pad=1.0)
@@ -76,22 +114,64 @@ def kde_visuals(df, columns_to_plot, column_name_mapping, title):
     # Displaying the Plots
     plt.show()
 
-def pairplot_visual(columns_to_plot, title):
+def pairplot_visual(columns_to_plot, column_name_mapping, title):
+    '''
+    Creates a pairplot graph on the relevant numeric columns.
+
+    Parameters
+    ------------
+    columns_to_plot (pd.DataFrame):
+        The DataFrame of columns that will be plotted.
+    title (str):
+        A string that will be used for the figure title.
+
+    Results
+    ------------
+    matplotlib.figure.Figure:
+        The figure that contains the pairplot grapha.
+    '''
     # Creating the plot
-    plt.figure(figsize = (8, 6))
+    plt.figure(figsize = (15, 12))
+
+    # Mapping the Variables to their New Names
+    plot_df_renamed = columns_to_plot.rename(columns = column_name_mapping)
 
     # Creating the pairplot
-    stock_data_pairplot = sns.pairplot(columns_to_plot)
+    stock_data_pairplot = sns.pairplot(plot_df_renamed)
 
     # Creating a Plot Title
     stock_data_pairplot.fig.suptitle('Correlations Among Predictor Variables', y = 1)
 
+    # Adding Padding to the Plots
+    plt.tight_layout(pad=1.05)
+
+    # Setting the Plot Title
     plt.title(title)
+
     plt.show()
 
 def qq_plot(df, columns_to_plot, column_name_mapping, title):
+    '''
+    Creates Q-Q Plots on the relevant numeric columns.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that contain the information that the Q-Q plots will be created from.
+    columns_to_plot (list):
+        The list of columns that will be plotted.
+    column_name_mapping (dict):
+        A dictionary containing descriptive names that will be used for the subplot titles.
+    title (str):
+        A string that will be used for the figure title.
+
+    Results
+    ------------
+    matplotlib.figure.Figure:
+        The figure that contains all the Q-Q plots.
+    '''
     # Creating the Figure for the Q-Q Subplots
-    fig3, axes = plt.subplots(nrows = 3, ncols = 2, figsize = (12, 10))
+    fig3, axes = plt.subplots(nrows = 5, ncols = 3, figsize = (12, 15))
 
     # Flatten the Axes Array to Iterate over all Subplots
     axes_flat = axes.flatten()
@@ -109,10 +189,10 @@ def qq_plot(df, columns_to_plot, column_name_mapping, title):
     for ax in axes_flat[len(columns_to_plot):]:
         ax.axis('off')
 
-    # Setting the Plot Title
-    fig3.suptitle(title)
+    # Setting the Figure Title
+    fig3.suptitle(title, y = 1)
 
-    # Adding Padding to the Graphs
+    # Adding Padding to the Plots
     fig3.tight_layout(pad=1.0)
 
     # Displaying the Plots

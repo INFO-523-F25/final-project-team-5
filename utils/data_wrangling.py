@@ -11,6 +11,18 @@ def date_transform(df, col):
     '''
     Converts a column into a datetime data type and extracts year and month information
     from the newly converted column.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that the date transformation will be applied to.
+    col (pd.Series):
+        The date variable that will be transformed.
+
+    Results
+    ------------
+    df (DataFrame):
+        The DataFrame with the transformed date column.
     '''
     try:
         # Converting the column to a datetime type
@@ -31,6 +43,22 @@ def date_transform(df, col):
 def unpivot_df(df, id_vars = 'Year', var_name = 'Month', value_name = 'Unemployment Percent'):
     '''
     Takes a DataFrame in the long format and unpivots the columns to the rows.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that will be unpivoted.
+    id_vars (pd.Series):
+        The ID variable of the DataFrame for the purpose of unpivoting the data.
+    var_name (str):
+        The name that will be applied to the variable column.
+    value_name (str):
+        The name that will be applied to the value column.
+
+    Results
+    ------------
+    df (DataFrame):
+        The DataFrame that has been unpivoted.
     '''
     try:
         # Unpivoting the DataFrame
@@ -47,6 +75,18 @@ month_replacement = {'Jan': 1, 'Feb': 2, 'Mar': 3, 'Apr': 4, 'May': 5, 'Jun': 6,
 def mapping_month_names(df, month):
     '''
     Takes a column of months in the integer format and converts them to a short text format.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that will obtain the mapped month names.
+    month (pd.Series):
+        The month variable that will be given new names.
+
+    Results
+    ------------
+    df (DataFrame):
+        The DataFrame with the transformed month column.
     '''
     try:
         # Mapping the new text column headers to the existing integer column headers
@@ -56,6 +96,25 @@ def mapping_month_names(df, month):
         print(f'{month} is not a valid column within the DataFrame.')
 
 def merge_dfs(df1, df2, on = ['Year', 'Month'], how = 'left'):
+    '''
+    Joins two DataFrames together into one via a left join.
+
+    Parameters
+    ------------
+    df1 (pd.DataFrame):
+        The first DataFrame that will be joined.
+    df2 (pd.DataFrame):
+        The second DataFrame that will be joined.
+    on (list):
+        The list of value(s) that the DataFrames will be joined on.
+    how (str):
+        The type of join that the table will use (i.e. left, right, outer, etc.)
+
+    Results
+    ------------
+    df (DataFrame):
+        The DataFrame that has been created as a result of df1 and df2 joining together.
+    '''
     try:
         # Merging the two DataFrames together
         df = pd.merge(df1, df2, on = on, how = how)

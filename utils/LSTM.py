@@ -16,6 +16,23 @@ model: https://medium.com/@techwithjulles/recurrent-neural-networks-rnns-and-lon
 """
 
 def lstm_function(df, y):
+    '''
+    Initializes an LSTM model, trains the model on a training dataset, tests
+    the model on a testing dataset, and returns the Mean Squared Error and R-Squared
+    Values.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that the LSTM model will be applied to.
+    y (pd.Series):
+        The response variable of the model.
+
+    Results
+    ------------
+    results (str):
+        The Mean-Squared and R-Squared results of the LSTM model.
+    '''
     # Initializing a Variable for the Predictor Columns
     predictor_cols = df.columns.drop(y)
 
@@ -23,6 +40,7 @@ def lstm_function(df, y):
     predictor_scaler = MinMaxScaler()
     response_scaler = MinMaxScaler()
 
+    # Fitting hte Model
     X_all = predictor_scaler.fit_transform(df[predictor_cols])
     y_all = response_scaler.fit_transform(df[[y]]) 
 
