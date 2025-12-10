@@ -10,6 +10,7 @@ import seaborn as sns
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
 
+'''
 column_name_mapping = {
     'vix': 'Volatility Index (VIX)',
     'us3m': 'U.S. Treasury 3-Month Bond Yield',
@@ -17,8 +18,9 @@ column_name_mapping = {
     'GPRD': 'Geopolitical Risk Index',
     'Unemployment Percent': 'Unemployment Percent'
 }
+'''
 
-def log_transform(df, columns):
+def log_transform(df, columns, column_name_mapping, title):
     '''
     Contains utility functions for performing a log transformation on the relevant numeric columns.
 
@@ -28,15 +30,19 @@ def log_transform(df, columns):
         The DataFrame that the log transformation will be applied to.
     columns (list):
         The list of columns that the log transformation will be applied to.
+    title (str):
+        The title of the Figure.
 
     Results
     ------------
+    matplotlib.figure.Figure:
+        The figure that contains all the Q-Q and KDE plots.
     df (pd.DataFrame):
         The DataFrame with the log-transformed results.
     '''
     try:
         # Creating the figure for all subplots
-        fig, axes = plt.subplots(nrows=8, ncols=2, figsize=(20, 10))
+        fig, axes = plt.subplots(nrows=9, ncols=2, figsize=(12, 15))
         axes_flat = axes.flatten()
 
         # Performing the log transformation to correct the positiv skew
@@ -65,6 +71,9 @@ def log_transform(df, columns):
             sns.kdeplot(df[col_name], fill=True, ax=ax_kde)
             ax_kde.set_title(f'Density: {new_name}')
             ax_kde.set_xlabel('Log-Transformed Value')
+
+        # Setting the Plot Title
+        fig.suptitle(title, y = 1)
 
         plt.tight_layout()
         plt.show()
