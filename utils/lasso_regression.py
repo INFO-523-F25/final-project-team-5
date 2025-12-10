@@ -107,7 +107,7 @@ def lasso_hyperparameter_tuning(df, y, cv, max_iter, random_state):
     lasso_cv.fit(X_train, y_train)
 
     # Re-Initializing the Model and Fitting it with the Optimal Alpha
-    best_lasso = Lasso(alpha = lasso_cv.alpha_)
+    best_lasso = Lasso(alpha = lasso_cv.alpha_, max_iter = max_iter)
     best_lasso.fit(X_train, y_train)
 
     # Making New Predictions
