@@ -7,8 +7,27 @@ This module contains functions to create various EDA visualizations such as boxp
 '''
 
 def boxplot_visuals(df, columns_to_plot, column_name_mapping, title):
+    '''
+    Creates boxplot visuals on the relevant numeric columns.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that contain the information that the boxplots will be created from.
+    columns_to_plot (list):
+        The list of columns that will be plotted.
+    column_name_mapping (dict):
+        A dictionary containing descriptive names that will be used for the subplot titles.
+    title (str):
+        A string that will be used for the figure title.
+
+    Results
+    ------------
+    matplotlib.figure.Figure:
+        The figure that contains all the boxplot graphs.
+    '''
     # Creating the Figure for the Boxplot Subplots
-    fig, axes = plt.subplots(nrows = 3, ncols = 2, figsize = (12, 10))
+    fig, axes = plt.subplots(nrows = 7, ncols = 2, figsize = (20, 10))
 
     # Flatten the Axes Array to Iterate over all Subplots
     axes_flat = axes.flatten()
@@ -42,8 +61,27 @@ def boxplot_visuals(df, columns_to_plot, column_name_mapping, title):
     plt.show()
 
 def kde_visuals(df, columns_to_plot, column_name_mapping, title):
+    '''
+    Creates KDE visuals on the relevant numeric columns.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that contain the information that the KDE plots will be created from.
+    columns_to_plot (list):
+        The list of columns that will be plotted.
+    column_name_mapping (dict):
+        A dictionary containing descriptive names that will be used for the subplot titles.
+    title (str):
+        A string that will be used for the figure title.
+
+    Results
+    ------------
+    matplotlib.figure.Figure:
+        The figure that contains all the KDE graphs.
+    '''
     # Creating the Figure for the Boxplot Subplots
-    fig, axes = plt.subplots(nrows = 3, ncols = 2, figsize = (12, 10))
+    fig, axes = plt.subplots(nrows = 7, ncols = 2, figsize = (20, 10))
 
     # Flatten the Axes Array to Iterate over all Subplots
     axes_flat = axes.flatten()
@@ -77,6 +115,21 @@ def kde_visuals(df, columns_to_plot, column_name_mapping, title):
     plt.show()
 
 def pairplot_visual(columns_to_plot, title):
+    '''
+    Creates a pairplot graph on the relevant numeric columns.
+
+    Parameters
+    ------------
+    columns_to_plot (pd.DataFrame):
+        The DataFrame of columns that will be plotted.
+    title (str):
+        A string that will be used for the figure title.
+
+    Results
+    ------------
+    matplotlib.figure.Figure:
+        The figure that contains the pairplot grapha.
+    '''
     # Creating the plot
     plt.figure(figsize = (8, 6))
 
@@ -90,8 +143,27 @@ def pairplot_visual(columns_to_plot, title):
     plt.show()
 
 def qq_plot(df, columns_to_plot, column_name_mapping, title):
+    '''
+    Creates Q-Q Plots on the relevant numeric columns.
+
+    Parameters
+    ------------
+    df (pd.DataFrame):
+        The DataFrame that contain the information that the Q-Q plots will be created from.
+    columns_to_plot (list):
+        The list of columns that will be plotted.
+    column_name_mapping (dict):
+        A dictionary containing descriptive names that will be used for the subplot titles.
+    title (str):
+        A string that will be used for the figure title.
+
+    Results
+    ------------
+    matplotlib.figure.Figure:
+        The figure that contains all the Q-Q plots.
+    '''
     # Creating the Figure for the Q-Q Subplots
-    fig3, axes = plt.subplots(nrows = 3, ncols = 2, figsize = (12, 10))
+    fig3, axes = plt.subplots(nrows = 7, ncols = 2, figsize = (20, 10))
 
     # Flatten the Axes Array to Iterate over all Subplots
     axes_flat = axes.flatten()

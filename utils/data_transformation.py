@@ -36,7 +36,7 @@ def log_transform(df, columns):
     '''
     try:
         # Creating the figure for all subplots
-        fig, axes = plt.subplots(nrows=5, ncols=2, figsize=(12, 10))
+        fig, axes = plt.subplots(nrows=8, ncols=2, figsize=(20, 10))
         axes_flat = axes.flatten()
 
         # Performing the log transformation to correct the positiv skew
@@ -73,3 +73,4 @@ def log_transform(df, columns):
     except Exception as e:
         print(f'An exception has occurred: {e}')
         return None # Return None or raise the exception depending on your needs
+    

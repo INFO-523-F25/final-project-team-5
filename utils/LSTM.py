@@ -40,6 +40,7 @@ def lstm_function(df, y):
     predictor_scaler = MinMaxScaler()
     response_scaler = MinMaxScaler()
 
+    # Fitting hte Model
     X_all = predictor_scaler.fit_transform(df[predictor_cols])
     y_all = response_scaler.fit_transform(df[[y]]) 
 
