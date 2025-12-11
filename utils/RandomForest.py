@@ -59,3 +59,4 @@ rf_r2 = r2_score(y_test, y_pred)
 print(f'Random Forest MSE: {rf_mse}')
 print(f'Random Forest R^2: {rf_r2}')
 
+
