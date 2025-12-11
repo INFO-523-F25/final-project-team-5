@@ -6,3 +6,7 @@ matplotlib
 seaborn
 statsmodels
 pmdarima
+tensorflow
+scikit-learn
+prophet
+
