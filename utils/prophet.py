@@ -9,7 +9,10 @@ from prophet import Prophet
 from prophet.diagnostics import performance_metrics, register_performance_metric, rolling_mean_by_h
 from prophet.diagnostics import cross_validation
 from sklearn.metrics import mean_squared_error, r2_score
+from dateutil.relativedelta import relativedelta
 import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
 import logging
 
 def prophet_model(df, periods, cv_initial, cv_period, cv_horizon):
@@ -41,7 +44,10 @@ def prophet_model(df, periods, cv_initial, cv_period, cv_horizon):
         Root Mean Squared Error, Mean Average Error, Mean Absolute Error, Mean Absolute
         Percentage Error, Median Absolute Percentage Error, and Coverage.
     matplotlib.figure.Figure:
-        The trend results from the prophet model.
+        The trend results from the entire prophet model.
+    matplotlib.figure.Figure:
+        The trend results from the zoomed-in prophet model (the most recent historical year 
+        and the first forecasted year).
     '''
     # Removing cmdstanpy messages from the output
     logging.getLogger('cmdstanpy').setLevel(logging.WARNING)
@@ -62,7 +68,64 @@ def prophet_model(df, periods, cv_initial, cv_period, cv_horizon):
     forecast = model.predict(future)
 
     # Plotting the Model's Results
-    model.plot(forecast)
+    full_forecast = model.plot(forecast)
+
+    # Creating the Plot's Title, X-Axis Label, and Y-Axis Label
+    plt.title("Prophet Model Historical and Forecast Plot")
+    plt.xlabel("Date")
+    plt.ylabel("Volatility Index (VIX)")
+
+    # Creating a Plot with the Latest Historical Year and the First Forecasted Year
+
+    # Obtaining the Maximum Date Value of the Original DataFrame
+    last_historical_date = df['ds'].max()
+    
+    # Calculating the Eaerliest and Latest Dates of the 1 Year Forecast
+    earliest_historical_date = last_historical_date - relativedelta(years = 1)
+    latest_forecast_date = last_historical_date + relativedelta(years = 1)
+
+    # Filtering the forecast DataFrame to only include the Relevant Timeframe
+    one_year_forecast = forecast[
+        (forecast['ds'] >= earliest_historical_date) & 
+        (forecast['ds'] <= latest_forecast_date)
+    ]
+    
+    # Creating the Figure for the Plot
+    fig_oneyearforecast, ax = plt.subplots(figsize=(10, 6))
+
+    # Ploting Historical Results
+    historical_data_zoom = df[(df['ds'] >= earliest_historical_date) & (df['ds'] <= latest_forecast_date)]
+    ax.plot(historical_data_zoom['ds'], historical_data_zoom['y'], 'k.', label='Historical Actuals')
+
+    # Plotting the Forecast Line
+    ax.plot(one_year_forecast['ds'], one_year_forecast['yhat'], ls='-', label='Forecast')
+
+    # Ploting the Confidence Interval
+    ax.fill_between(
+        one_year_forecast['ds'], 
+        one_year_forecast['yhat_lower'], 
+        one_year_forecast['yhat_upper'], 
+        alpha=0.2, 
+        label='Confidence Interval'
+    )
+
+    # Addding the Plot Title, X-Axis Label, and Y-Axis Label
+    ax.set_title(f'Prophet Model Trends for Latest Historical Year and First Forecasted Year')
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Volatility Index (VIX)')
+
+    # Adding the Plot Legend
+    ax.legend()
+
+    # Adding a Grid to the Plot
+    ax.grid(True, alpha=0.5)
+
+    # Format the X-Axis Dates
+    ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+    plt.xticks(rotation=45)
+    
+    # Creating a Tight Layout
+    plt.tight_layout()
 
     # Initializing a Variable to perform Cross Validation on the Model
     df_cv = cross_validation(model, initial =  cv_initial, period= cv_period, horizon = cv_horizon)
@@ -90,4 +153,9 @@ def prophet_model(df, periods, cv_initial, cv_period, cv_horizon):
 
     # Returning the Performance Metrics an Mean Squared Error
     print('Performance Metrics:')
+
+    # Plotting Results from both Plots
+    plt.show(full_forecast)
+    plt.show(fig_oneyearforecast)
+
     return df_performance_metrics
