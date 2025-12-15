@@ -45,6 +45,8 @@ def boxplot_visuals(df, columns_to_plot, column_name_mapping, title):
 
         # Creating the Boxplots
         sns.boxplot(x=df[j], ax=ax, color = col_color, vert = False, patch_artist=True, width = 0.2)
+        
+        # Setting the Title for each Subplot
         ax.set_title(new_name)
 
     # Hiding any Unused Subplots
@@ -80,7 +82,7 @@ def kde_visuals(df, columns_to_plot, column_name_mapping, title):
     matplotlib.figure.Figure:
         The figure that contains all the KDE graphs.
     '''
-    # Creating the Figure for the Boxplot Subplots
+    # Creating the Figure for the KDE Subplots
     fig, axes = plt.subplots(nrows = 5, ncols = 3, figsize = (12, 15))
 
     # Flatten the Axes Array to Iterate over all Subplots
@@ -92,13 +94,15 @@ def kde_visuals(df, columns_to_plot, column_name_mapping, title):
     # Initializing a Variable to hold a Palette with as many colors as columns
     palette = sns.color_palette("Set2", n_colors=len(cols))
 
-    # Iterate through columns and corresponding axes and Creating the Boxplots
+    # Iterate through columns and corresponding axes and Creating the KDE Plots
     for j, ax, col_color in zip(columns_to_plot, axes_flat, palette):
         # Mapping the Variables to their New Names
         new_name = column_name_mapping.get(j, j)
 
-        # Creating the Boxplots
+        # Creating the KDE Plots
         sns.kdeplot(df[j], ax=ax, color = col_color, fill = True)
+        
+        # Setting the Title for each Subplot
         ax.set_title(new_name)
 
     # Hiding any Unused Subplots
@@ -139,14 +143,12 @@ def pairplot_visual(columns_to_plot, column_name_mapping, title):
     # Creating the pairplot
     stock_data_pairplot = sns.pairplot(plot_df_renamed)
 
-    # Creating a Plot Title
-    stock_data_pairplot.fig.suptitle('Correlations Among Predictor Variables', y = 1)
+    # Setting the Plot Title
+    stock_data_pairplot.fig.suptitle(title, y = 1)
 
     # Adding Padding to the Plots
     plt.tight_layout(pad=1.05)
 
-    # Setting the Plot Title
-    plt.title(title)
 
     plt.show()
 
