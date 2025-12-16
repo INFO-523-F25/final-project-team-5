@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense, Dropout
+from tensorflow.keras.layers import LSTM, Dense
 from sklearn.metrics import mean_squared_error, r2_score
 
 """
@@ -36,13 +36,9 @@ def lstm_function(df, y):
     # Initializing a Variable for the Predictor Columns
     predictor_cols = df.columns.drop(y)
 
-    # Initializing MinMaxScalers for Predictor and Response Variables
-    predictor_scaler = MinMaxScaler()
-    response_scaler = MinMaxScaler()
-
-    # Fitting hte Model
-    X_all = predictor_scaler.fit_transform(df[predictor_cols])
-    y_all = response_scaler.fit_transform(df[[y]]) 
+    # Creating a Variable for the X and y Variables
+    X_all = df[predictor_cols].values
+    y_all = df[[y]].values
 
     # Creating a one-step lag: current features -> next-step target
     X = X_all[:-1]
@@ -63,24 +59,19 @@ def lstm_function(df, y):
     model.compile(optimizer='adam', loss='mse')
 
     # Fitting the Model
-    history = model.fit(X_train, y_train, epochs=100, batch_size=32,
+    model.fit(X_train, y_train, epochs=100, batch_size=32,
                         validation_split=0.2, verbose=0)
-
-    # Evaluating the Model
-    loss = model.evaluate(X_test, y_test)
 
     # Predicting the Model
     y_pred = model.predict(X_test)
-    y_pred_inv = response_scaler.inverse_transform(y_pred)
-    y_test_inv = response_scaler.inverse_transform(y_test)
 
     # Calculating the Mean Squared Error and R-Squared Value
-    testScore = mean_squared_error(y_test_inv.ravel(), y_pred_inv.ravel())
+    mse = mean_squared_error(y_test.ravel(), y_pred.ravel())
 
     # Calculating the R-Squared Value
-    r2_val = r2_score(y_test_inv.ravel(), y_pred_inv.ravel())
+    r2_val = r2_score(y_test.ravel(), y_pred.ravel())
 
     # Returning the Results
-    result = f'Mean Squared Error: {float(testScore)}\nR-Squared: {float(r2_val)}'
+    result = f'Mean Squared Error: {float(mse)}\nR-Squared: {float(r2_val)}'
     
     return result

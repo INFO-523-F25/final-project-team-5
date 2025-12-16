@@ -75,6 +75,9 @@ def prophet_model(df, periods, cv_initial, cv_period, cv_horizon):
     plt.xlabel("Date")
     plt.ylabel("Volatility Index (VIX)")
 
+    # Adding the Plot Legend
+    plt.legend()
+
     # Creating a Plot with the Latest Historical Year and the First Forecasted Year
 
     # Obtaining the Maximum Date Value of the Original DataFrame

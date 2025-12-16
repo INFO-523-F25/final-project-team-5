@@ -111,6 +111,9 @@ def gradient_boost_hyperparameter_tuning(df, y, param_grid, cv, random_state):
     gradient_boost_best = gradient_boost.set_params(**grid_search.best_params_)
     gradient_boost_best.fit(X_train, y_train)
 
+    # Returning the Best Parameters from Grid Search
+    print(f'Best Parameters: {grid_search.best_params_}')
+
     # Making New Predictions on the Test Dataset
     y_pred_best = gradient_boost_best.predict(X_test)
 
