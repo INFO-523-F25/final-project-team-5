@@ -1,4 +1,4 @@
-# Data
+# Dataset #1
 **Dataset #1: 34-year Daily Stock Data (1990-2024)**: This dataset (stock_data.csv) captures historical financial market data and macroeconomic indicators spanning over three decades, from 1990 onwards. It is designed for financial analysis, time series forecasting, and exploring relationships between market volatility, stock indices, and macroeconomic factors. This dataset is particularly relevant for researchers, data scientists, and enthusiasts interested in studying:
 
 * Volatility forecasting (VIX)
@@ -12,8 +12,6 @@ Source: This data has been aggregated from a mix of historical financial records
 * Volume Data: Extracted from official exchange reports.
 * Macroeconomic Indicators: Bureau of Economic Analysis (BEA), Federal Reserve, and other public records.
 * Uncertainty Metrics (EPU, GPRD): Economic Policy Uncertainty Index and Global Policy Uncertainty Database.
-
-**Dataset #2: Monthly Unemployment Data (1990-2024):** This dataset (SeriesReport.csv) captures historical unemployment percent data in the United States from 1990-2024.
 
 # Codebook for 34-year Daily Stock Data (1990-2024) Dataset
 
@@ -51,6 +49,10 @@ Source: This data has been aggregated from a mix of historical financial records
 
 ## Data Source:
 https://www.kaggle.com/datasets/shiveshprakash/34-year-daily-stock-data
+
+# Dataset #2
+
+**Dataset #2: Monthly Unemployment Data (1990-2024):** This dataset (SeriesReport.csv) captures historical unemployment percent data in the United States from 1990-2024. This data was derived from the Buerau of Labor Statistics.
 
 # Codebook for Monthly Unemployment Data (1990-2024) Dataset
 
