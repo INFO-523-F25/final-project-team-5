@@ -23,5 +23,5 @@ Our analysis focuses on two primary research questions:\
 1. **How do economic factors — such as unemployment rates and the U.S. Treasury 3-Month Bond Yield — influence volatility within financial markets?**\
 2. **What insights can historical stock market data provide to help forecast future price movements and assess market volatility?**\
 
-Through data exploration, data visualization, and machine learning, we aim to identify patterns and relationships to enhance our understanding of market dynamics and predictive trends. For this analysis we are utilizing the '34-year Daily Stock Data (1990-2024)' dataset.
+Through data exploration, data visualization, and machine learning, we aim to identify patterns and relationships to enhance our understanding of market dynamics and predictive trends. For this analysis we are utilizing the '34-year Daily Stock Data (1990-2024)' and 'Monthly Unemployment Percentage' datasets.
 
