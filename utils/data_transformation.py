@@ -42,7 +42,7 @@ def log_transform(df, columns, column_name_mapping, title):
     '''
     try:
         # Creating the figure for all subplots
-        fig, axes = plt.subplots(nrows=9, ncols=2, figsize=(12, 30))
+        fig, axes = plt.subplots(nrows=10, ncols=2, figsize=(12, 30))
         axes_flat = axes.flatten()
 
         # Performing the log transformation to correct the positiv skew
