@@ -71,7 +71,7 @@ Overall, Gradient Boost Regression outperformed the other models in question 1 (
 
 For Question 2, Prophet achieved the best forecasting performance (MSE = 0.0478, R-squared = 0.5618), whereas the LSTM model performed the worst (R-squared = −9.7147, MSE = 1.2614). This indicates that the Prophet model can handle changes in trends within a given time period while also considering aspects like seasonality (yearly, weekly, daily data). These findings suggest that, although financial markets are inherently unpredictable, pairing regression and time-series models offers the most comprehensive approach for interpreting market behavior.
 
-####Summary of Model Performance - Question 1
+#### Summary of Model Performance - Question 1
 
 | Model | R² | MSE |
 |------|--------|---------|
@@ -80,7 +80,7 @@ For Question 2, Prophet achieved the best forecasting performance (MSE = 0.0478,
 | Lasso | 0.5605 | 0.0479 |
 | Gradient Boost Regression | 0.9626| 0.0040 |
 
-####Summary of Model Performance - Question 2
+#### Summary of Model Performance - Question 2
 
 | Model | R² | MSE |
 |------|--------|---------|
