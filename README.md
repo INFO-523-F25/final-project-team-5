@@ -38,7 +38,17 @@ Developers should create feature branches following the format `dev_[lastName]_[
 Once development and testing are complete, submit a pull request into main for peer review. Team members will review the changes, offer feedback, and approve the merge once all comments are resolved.
 ## Dependencies
 Python 3.12 or Greater is required for this project. We used the following packages in this project:
-- 
+- jupyter
+- nbformat
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- statsmodels
+- pmdarima
+- tensorflow
+- scikit-learn
+- prophet
 ## Authors
 - Nicholas Tyler
 - John Moran
