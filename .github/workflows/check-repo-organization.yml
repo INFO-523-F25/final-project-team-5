@@ -16,7 +16,7 @@ jobs:
             "data/*.csv", "data/*.csv", "data/*.xls", "data/*.xlsx", "data/*.RDS", "data/README.md", "data/*.qmd",
             "utils/*.py", "utils/README.md",
             "README.md", "project-final.Rproj",
-            "index.qmd", "presentation.qmd", "proposal.qmd", "about.qmd", "_quarto.yml", "data/*.scss", "*.ipynb", "requirements.txt", "FinalPresentationLink.txt", "FinalProject Write-Up-Team5.pdf", "Team 5 Presentation.pdf"
+            "index.qmd", "presentation.qmd", "proposal.qmd", "about.qmd", "_quarto.yml", "data/*.scss", "*.ipynb", "requirements.txt", "FinalPresentationLink.txt", "FinalProject Write-Up -Team5.pdf", "Team 5 Presentation.pdf"
             )
             )          
         })
