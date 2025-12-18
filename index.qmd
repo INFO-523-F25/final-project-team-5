@@ -37,7 +37,8 @@ Together, these questions offered a framework for evaluating what data mining mo
 ### Data Overview
 The Daily Stocks Data dataset (stocks_data.csv) is a dataset from Kaggle which captures data on financial market performance from 1990 to 2024. This data has relevant information related to volume, macroeconomic indicators, volatility index, and uncertainty metrics. This dataset is compiled from a variety of historical records, including the Chicago Board Option Exchange, Yahoo Finance and historical finance datasets, Bureau of Economic Analysis, Federal Reserve, Economic Policy Uncertainty Index, and the Global Policy Uncertainty Database.
 While the Daily Stocks Data dataset had insightful features for our analysis, this dataset lacked a clear understanding of the unemployment rate, as this information was only presented in quartiles. Therefore, we obtained a dataset from the Bureau of Labor Statistics (SeriesReport.csv), which provides the unemployment rate per month for the United States from 1990 - 2024. By joining this data with our preexisting dataset, we obtained a dataset with a complete picture of the financial market along with the current economic conditions per day from 1990-2024.
-#Exploratory Data Analysis
+
+### Exploratory Data Analysis
 Our dataset has 1 date feature (dt) and 14 total numeric features. Multiple numeric features were positively skewed, including VIX, S&P 500 Index (and its trading volume), DJIA (and its trading volume), the Economic Policy Uncertainty Index, Geopolitical Risk Index, the Previous Day Volatility Index, and Unemployment Percent. Furthermore, there were a few features that exhibited slight multinomial distributions, including the S&P 500 Trading Volume, the Hang Seng Index, U.S. Treasure 3-Month Bond Yield, and Unemployment (in Quartiles).
 
 ### Methods, Analysis and Results
