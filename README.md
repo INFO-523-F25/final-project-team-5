@@ -36,10 +36,9 @@ Through data exploration, data visualization, and machine learning, we aim to id
 ## Branching Conventions
 Developers should create feature branches following the format `dev_[lastName]_[issue#]`.
 Once development and testing are complete, submit a pull request into main for peer review. Team members will review the changes, offer feedback, and approve the merge once all comments are resolved.
-## Build Instructions
-**TBD**
 ## Dependencies
-**TBD**
+Python 3.12 or Greater is required for this project. We used the following packages in this project:
+- 
 ## Authors
 - Nicholas Tyler
 - John Moran
